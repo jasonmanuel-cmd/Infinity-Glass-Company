@@ -17,7 +17,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="preload" href="../css/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../css/styles.css"></noscript>
 
   <script type="application/ld+json">
   {
@@ -141,6 +142,15 @@
     ]
   }
   </script>
+
+  <script type="speculationrules">
+  {
+    "prerender": [{
+      "where": { "href_matches": "/*" },
+      "eagerness": "moderate"
+    }]
+  }
+  </script>
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -149,7 +159,10 @@
   <header class="header" role="banner">
     <div class="container header-inner">
       <a href="/" class="logo" aria-label="Infinity Glass Company - Home">
-        <img src="../infinityglasslogo.png" alt="Infinity Glass Company San Antonio Texas" width="50" height="50">
+        <picture>
+          <source srcset="../infinityglasslogo.webp" type="image/webp">
+          <img src="../infinityglasslogo.png" alt="Infinity Glass Company San Antonio Texas" width="50" height="50" loading="eager" decoding="async">
+        </picture>
         <div class="logo-text">
           Infinity Glass
           <span>San Antonio, TX</span>
