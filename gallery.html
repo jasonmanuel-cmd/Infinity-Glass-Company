@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Infinity Glass Company - Glass & Mirror Projects in San Antonio</title>
+  <meta name="description" content="Browse our gallery of custom glass and mirror projects in San Antonio. Frameless shower doors, glass railings, storefronts, custom mirrors, and more by Infinity Glass Company.">
+  <meta name="keywords" content="glass gallery San Antonio, shower door photos, glass railing gallery, custom mirror gallery, storefront glass pictures">
+  <link rel="canonical" href="https://www.infinityglasscompany.com/gallery.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallery | Infinity Glass Company - San Antonio">
+  <meta property="og:description" content="Browse our completed glass and mirror projects. Shower doors, railings, storefronts, custom mirrors, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.infinityglasscompany.com/gallery.html">
+  <meta property="og:image" content="https://www.infinityglasscompany.com/images/og-image.jpg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.infinityglasscompany.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Gallery",
+        "item": "https://www.infinityglasscompany.com/gallery.html"
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* --- Gallery Page Specific --- */
+    .gallery-hero {
+      background-color: var(--color-dark);
+      padding: calc(var(--header-height) + var(--space-3xl)) 0 var(--space-3xl);
+      text-align: center;
+    }
+
+    .gallery-hero h1 {
+      color: var(--color-white);
+      margin-bottom: var(--space-md);
+    }
+
+    .gallery-hero p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Filter Tabs */
+    .filter-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .filter-tab {
+      padding: 0.625rem 1.25rem;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--color-gray-600);
+      background-color: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+
+    .filter-tab:hover {
+      color: var(--color-blue);
+      border-color: var(--color-blue);
+    }
+
+    .filter-tab.active {
+      background-color: var(--color-blue-bright);
+      color: var(--color-white);
+      border-color: var(--color-blue-bright);
+    }
+
+    /* Gallery Items */
+    .gallery-item {
+      transition: opacity var(--transition-base), transform var(--transition-base);
+    }
+
+    .gallery-item.hidden {
+      display: none;
+    }
+
+    /* Gallery Category Label */
+    .gallery-category {
+      position: absolute;
+      top: var(--space-md);
+      left: var(--space-md);
+      z-index: 2;
+      padding: 0.25rem 0.75rem;
+      background-color: var(--color-blue-bright);
+      color: var(--color-white);
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius-full);
+      opacity: 0;
+      transition: opacity var(--transition-fast);
+    }
+
+    .gallery-item:hover .gallery-category {
+      opacity: 1;
+    }
+
+    .gallery-empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: var(--space-3xl) 0;
+      color: var(--color-gray-400);
+      font-size: 1rem;
+    }
+
+    /* CTA Section */
+    .gallery-cta {
+      background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-navy) 100%);
+      padding: var(--space-3xl) 0;
+      text-align: center;
+    }
+
+    .gallery-cta h2 {
+      color: var(--color-white);
+      margin-bottom: var(--space-md);
+    }
+
+    .gallery-cta p {
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 600px;
+      margin: 0 auto var(--space-xl);
+    }
+
+    .gallery-cta .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-md);
+      justify-content: center;
+    }
+
+    @media (max-width: 767px) {
+      .gallery-hero {
+        padding-top: calc(var(--header-height) + var(--space-2xl));
+        padding-bottom: var(--space-2xl);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Infinity Glass Company - Home">
+        <img src="infinityglasslogo.png" alt="Infinity Glass Company San Antonio Texas" width="50" height="50">
+        <div class="logo-text">
+          Infinity Glass
+          <span>San Antonio, TX</span>
+        </div>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main navigation">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="residential.html">Residential</a></li>
+          <li><a href="commercial.html">Commercial</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="service-areas.html">Service Areas</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="tel:+12106554527" class="nav-phone" aria-label="Call 210-655-4527">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          210-655-4527
+        </a>
+        <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+      </div>
+
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="nav-mobile" aria-label="Mobile navigation">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="residential.html">Residential Services</a></li>
+        <li><a href="commercial.html">Commercial Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="reviews.html">Reviews</a></li>
+        <li><a href="service-areas.html">Service Areas</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:+12106554527" class="btn btn-primary btn-block">Call 210-655-4527</a>
+      <a href="contact.html" class="btn btn-outline btn-block">Request a Free Quote</a>
+    </nav>
+  </header>
+
+  <!-- Breadcrumbs -->
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="container">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><span class="separator">/</span></li>
+        <li><span class="current">Gallery</span></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="gallery-hero">
+    <div class="container">
+      <h1>Our Glass &amp; Mirror Projects</h1>
+      <p>Browse our completed residential and commercial glass installations across San Antonio.</p>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section-lg">
+    <div class="container">
+
+      <!-- Filter Tabs -->
+      <div class="filter-tabs" role="tablist" aria-label="Filter gallery by category">
+        <button class="filter-tab active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-tab" data-filter="residential" role="tab" aria-selected="false">Residential</button>
+        <button class="filter-tab" data-filter="commercial" role="tab" aria-selected="false">Commercial</button>
+        <button class="filter-tab" data-filter="shower" role="tab" aria-selected="false">Shower Doors</button>
+        <button class="filter-tab" data-filter="mirrors" role="tab" aria-selected="false">Mirrors</button>
+        <button class="filter-tab" data-filter="storefront" role="tab" aria-selected="false">Storefronts</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-grid">
+
+        <!-- 1. Custom Mirror -->
+        <div class="gallery-item animate-in" data-category="mirrors residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/Custom-Mirror2-scaled-1.jpg" alt="Custom framed mirror installation in San Antonio home by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Mirrors</span>
+          <div class="gallery-item-overlay"><p>Custom Mirror Installation</p></div>
+        </div>
+
+        <!-- 2. Glass Railing -->
+        <div class="gallery-item animate-in" data-category="residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/Glass-Railing5-scaled-1.webp" alt="Modern glass railing installation for San Antonio residence by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Residential</span>
+          <div class="gallery-item-overlay"><p>Modern Glass Railing</p></div>
+        </div>
+
+        <!-- 3. Glass Railing -->
+        <div class="gallery-item animate-in" data-category="residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/Glass-Railing2-scaled-1.webp" alt="Glass deck railing project completed in San Antonio by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Residential</span>
+          <div class="gallery-item-overlay"><p>Deck Glass Railing</p></div>
+        </div>
+
+        <!-- 4. Custom Mirror -->
+        <div class="gallery-item animate-in" data-category="mirrors residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/Custom-Mirror1-scaled-1.webp" alt="Full-wall custom mirror installed in San Antonio home by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Mirrors</span>
+          <div class="gallery-item-overlay"><p>Full-Wall Custom Mirror</p></div>
+        </div>
+
+        <!-- 5. Glass Storefront -->
+        <div class="gallery-item animate-in" data-category="commercial storefront">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/glass-storefront4-scaled-1.webp" alt="Commercial storefront glass installation in San Antonio by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Storefront</span>
+          <div class="gallery-item-overlay"><p>Commercial Storefront Glass</p></div>
+        </div>
+
+        <!-- 6. Glass Wall -->
+        <div class="gallery-item animate-in" data-category="commercial residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/Glass-Wall12-scaled-1.webp" alt="Interior glass wall partition installed in San Antonio by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Commercial</span>
+          <div class="gallery-item-overlay"><p>Interior Glass Wall</p></div>
+        </div>
+
+        <!-- 7. Glass Table -->
+        <div class="gallery-item animate-in" data-category="residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/glass-table1-scaled-1.jpg" alt="Custom glass table top fabricated and installed in San Antonio by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Residential</span>
+          <div class="gallery-item-overlay"><p>Custom Glass Table Top</p></div>
+        </div>
+
+        <!-- 8. Glass Storefront -->
+        <div class="gallery-item animate-in" data-category="commercial storefront">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/glass-storefront3-scaled-1.jpg" alt="Retail storefront glass replacement in San Antonio by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Storefront</span>
+          <div class="gallery-item-overlay"><p>Retail Storefront Glass</p></div>
+        </div>
+
+        <!-- 9. Shower Door -->
+        <div class="gallery-item animate-in" data-category="shower residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/shower21-scaled-1.webp" alt="Frameless shower door installation in San Antonio by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Shower Door</span>
+          <div class="gallery-item-overlay"><p>Frameless Shower Door</p></div>
+        </div>
+
+        <!-- 10. Shower Door -->
+        <div class="gallery-item animate-in" data-category="shower residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/shower4-1-scaled-1.jpg" alt="Semi-frameless shower enclosure installed in San Antonio bathroom by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Shower Door</span>
+          <div class="gallery-item-overlay"><p>Semi-Frameless Shower Enclosure</p></div>
+        </div>
+
+        <!-- 11. Glass Wall -->
+        <div class="gallery-item animate-in" data-category="commercial residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/glass-wall11-scaled-1.jpg" alt="Glass office partition wall installed in San Antonio commercial space by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Commercial</span>
+          <div class="gallery-item-overlay"><p>Office Glass Partition</p></div>
+        </div>
+
+        <!-- 12. Custom Mirror (duplicate) -->
+        <div class="gallery-item animate-in" data-category="mirrors residential">
+          <img src="https://infinityglassandmirror.net/wp-content/uploads/2026/01/Custom-Mirror2-scaled-1.jpg" alt="Decorative custom mirror design and installation in San Antonio by Infinity Glass Company" width="600" height="450" loading="lazy">
+          <span class="gallery-category">Mirrors</span>
+          <div class="gallery-item-overlay"><p>Decorative Custom Mirror</p></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="gallery-cta">
+    <div class="container">
+      <h2 class="animate-in">Inspired by What You See?</h2>
+      <p class="animate-in">Let us bring the same quality craftsmanship to your home or business. Contact us for a free consultation and quote.</p>
+      <div class="btn-group animate-in">
+        <a href="tel:+12106554527" class="btn btn-primary btn-lg">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call 210-655-4527
+        </a>
+        <a href="contact.html" class="btn btn-secondary btn-lg">Request a Free Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo">
+            <img src="infinityglasslogo.png" alt="Infinity Glass Company" width="50" height="50">
+            <div class="logo-text" style="color: white;">
+              Infinity Glass
+              <span style="color: rgba(255,255,255,0.5);">San Antonio, TX</span>
+            </div>
+          </a>
+          <p>San Antonio's trusted experts for residential and commercial glass repair, replacement, and custom installations.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services/window-glass-replacement.html">Window Glass Replacement</a></li>
+            <li><a href="services/shower-doors.html">Shower Doors</a></li>
+            <li><a href="services/custom-mirrors.html">Custom Mirrors</a></li>
+            <li><a href="services/storefront-glass.html">Storefront Glass</a></li>
+            <li><a href="services/office-partitions.html">Office Partitions</a></li>
+            <li><a href="services/emergency-glass-repair.html">Emergency Glass Repair</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="service-areas.html">Service Areas</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="tel:+12106554527">210-655-4527</a>
+          </p>
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:info@infinityglassandmirror.net">info@infinityglassandmirror.net</a>
+          </p>
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            10921 Iota Dr, San Antonio, TX 78217
+          </p>
+          <p>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Mon-Fri: 8am-6pm | Sat: 9am-2pm
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Infinity Glass Company. All rights reserved. | San Antonio, TX | 210-655-4527</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <div class="sticky-cta-inner">
+      <a href="tel:+12106554527" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Call Now
+      </a>
+      <a href="contact.html" class="btn btn-green">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Get Quote
+      </a>
+    </div>
+  </div>
+
+  <!-- Gallery Filter Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var filterTabs = document.querySelectorAll('.filter-tab');
+      var galleryItems = document.querySelectorAll('.gallery-item');
+
+      filterTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var filter = tab.getAttribute('data-filter');
+
+          // Update active tab
+          filterTabs.forEach(function (t) {
+            t.classList.remove('active');
+            t.setAttribute('aria-selected', 'false');
+          });
+          tab.classList.add('active');
+          tab.setAttribute('aria-selected', 'true');
+
+          // Filter items
+          galleryItems.forEach(function (item) {
+            var categories = item.getAttribute('data-category') || '';
+            if (filter === 'all' || categories.indexOf(filter) !== -1) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+        });
+      });
+    });
+  </script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
