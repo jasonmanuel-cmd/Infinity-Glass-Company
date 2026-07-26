@@ -259,14 +259,14 @@ p {
 }
 
 .btn-green {
-  background-color: var(--color-green);
+  background-color: var(--color-blue-bright);
   color: var(--color-white);
-  border-color: var(--color-green);
+  border-color: var(--color-blue-bright);
 }
 
 .btn-green:hover {
-  background-color: var(--color-green-light);
-  border-color: var(--color-green-light);
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
   color: var(--color-white);
 }
 
