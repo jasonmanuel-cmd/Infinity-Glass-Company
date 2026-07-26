@@ -119,6 +119,20 @@ body::after {
 .section { padding: var(--space-4xl) 0; }
 .section-sm { padding: var(--space-2xl) 0; }
 .section-lg { padding: var(--space-5xl) 0; }
+
+/* --- Double-Bezel Card Effect --- */
+.double-bezel {
+  padding: 6px;
+  background: linear-gradient(135deg, rgba(14,165,233,0.06) 0%, rgba(14,165,233,0.02) 100%);
+  border-radius: calc(var(--radius-2xl) + 4px);
+  border: 1px solid rgba(14,165,233,0.08);
+}
+.double-bezel-inner {
+  background: var(--color-white);
+  border-radius: calc(var(--radius-2xl) - 2px);
+  overflow: hidden;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.8), 0 1px 3px rgba(0,0,0,0.04);
+}
 .text-center { text-align: center; }
 .text-white { color: var(--color-white); }
 .bg-white { background-color: var(--color-white); }
@@ -128,6 +142,22 @@ body::after {
 .visually-hidden {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+/* --- Eyebrow Tags --- */
+.eyebrow {
+  display: inline-block;
+  padding: 0.3rem 0.85rem;
+  background: linear-gradient(135deg, rgba(14,165,233,0.1) 0%, rgba(14,165,233,0.05) 100%);
+  border: 1px solid rgba(14,165,233,0.15);
+  border-radius: var(--radius-full);
+  color: var(--color-blue-bright);
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: var(--space-lg);
 }
 
 /* --- Buttons --- */
@@ -184,6 +214,29 @@ body::after {
 .btn-lg { padding: 1.125rem 2.5rem; font-size: 1.125rem; }
 .btn-sm { padding: 0.625rem 1.25rem; font-size: 0.875rem; }
 .btn-block { width: 100%; }
+.btn-pill {
+  border-radius: var(--radius-full);
+  padding: 0.875rem 2.25rem;
+}
+.btn-pill-lg {
+  border-radius: var(--radius-full);
+  padding: 1.125rem 2.75rem;
+  font-size: 1.125rem;
+}
+.btn-icon-trailing {
+  display: inline-flex; align-items: center; gap: var(--space-sm);
+}
+.btn-icon-trailing .btn-icon-circle {
+  width: 32px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.15);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+.btn:hover .btn-icon-circle {
+  background: rgba(255,255,255,0.25);
+  transform: translateX(2px);
+}
 
 /* --- Header --- */
 .header {
@@ -673,7 +726,7 @@ body::after {
 }
 
 /* --- Animations --- */
-.animate-in { opacity: 0; transform: translateY(30px); transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+.animate-in { opacity: 0; transform: translateY(24px); transition: opacity 0.8s cubic-bezier(0.32,0.72,0,1), transform 0.8s cubic-bezier(0.32,0.72,0,1); }
 .animate-in.visible { opacity: 1; transform: translateY(0); }
 .animate-in.delay-1 { transition-delay: 0.1s; }
 .animate-in.delay-2 { transition-delay: 0.2s; }
