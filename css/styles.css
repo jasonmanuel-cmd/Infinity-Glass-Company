@@ -471,6 +471,100 @@ body::after {
 .page-hero h1 { color: var(--color-white); margin-bottom: var(--space-md); position: relative; }
 .page-hero p { color: rgba(255,255,255,0.75); font-size: 1.125rem; max-width: 600px; margin: 0 auto; position: relative; }
 
+/* --- Decorative Geometric Accents --- */
+.geo-accent {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(14,165,233,0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.geo-accent-1 {
+  top: -100px;
+  right: -80px;
+  width: 400px;
+  height: 400px;
+  animation: geoFloat 12s ease-in-out infinite alternate;
+}
+.geo-accent-2 {
+  bottom: -60px;
+  left: -40px;
+  width: 250px;
+  height: 250px;
+  border-color: rgba(14,165,233,0.05);
+  animation: geoFloat 10s ease-in-out infinite alternate-reverse;
+}
+@keyframes geoFloat {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(15px, -15px) rotate(8deg); }
+}
+
+/* --- Spotlight Border Effect on Hover --- */
+.spotlight-card {
+  position: relative;
+}
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--spotlight-angle, 0deg),
+    transparent 0%,
+    rgba(14,165,233,0.3) 10%,
+    transparent 20%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* --- Mesh Gradient Background --- */
+.mesh-bg {
+  position: relative;
+  overflow: hidden;
+}
+.mesh-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 40% at 15% 85%, rgba(14,165,233,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 85% 15%, rgba(56,189,248,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 30% at 50% 50%, rgba(14,165,233,0.03) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --- Diagonal Accent Stripe --- */
+.diagonal-stripe {
+  position: relative;
+  overflow: hidden;
+}
+.diagonal-stripe::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 1px;
+  height: 200%;
+  background: linear-gradient(180deg, transparent, rgba(14,165,233,0.1), transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* --- FAQ --- */
 .faq-list { max-width: 800px; margin: 0 auto; }
 .faq-item {

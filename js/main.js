@@ -236,6 +236,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // --- Spotlight border effect on cards ---
+  document.querySelectorAll('.spotlight-card').forEach(function (card) {
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x = e.clientX - rect.left;
+      var y = e.clientY - rect.top;
+      var centerX = rect.width / 2;
+      var centerY = rect.height / 2;
+      var angle = Math.atan2(y - centerY, x - centerX) * (180 / Math.PI) + 90;
+      card.style.setProperty('--spotlight-angle', angle + 'deg');
+    });
+  });
+
   // --- Phone number click tracking ---
   document.querySelectorAll('a[href^="tel:"]').forEach(function (link) {
     link.addEventListener('click', function () {
