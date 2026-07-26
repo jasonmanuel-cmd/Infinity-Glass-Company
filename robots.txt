@@ -26,12 +26,6 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-# Disallow admin and low-value pages
-Disallow: /wp-admin/
-Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
-Disallow: /*?
-Disallow: /sample-page/
-Disallow: /elementor-*/
+# Static site - no admin or low-value pages to block
 
 Sitemap: https://www.infinityglasscompany.com/sitemap.xml

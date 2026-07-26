@@ -495,16 +495,15 @@ p {
   align-items: center;
   gap: var(--space-sm);
   padding: 0.5rem 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(14, 165, 233, 0.9);
+  border: 1px solid rgba(14, 165, 233, 0.5);
   border-radius: var(--radius-full);
   color: var(--color-white);
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: var(--space-xl);
-  backdrop-filter: blur(10px);
 }
 
 .hero h1 {
@@ -1155,7 +1154,7 @@ p {
 }
 
 .footer-bottom p {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 0.8rem;
   margin: 0;
 }
@@ -1502,6 +1501,104 @@ p {
 .animate-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* --- Accessibility: Skip Link --- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-md);
+  z-index: 10000;
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-blue-bright);
+  color: var(--color-white);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-md);
+  outline: 2px solid var(--color-white);
+  outline-offset: 2px;
+}
+
+/* --- Accessibility: Focus Visible --- */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue-bright);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--color-blue-bright);
+  outline-offset: 2px;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+  border-color: var(--color-blue-bright);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.15);
+  outline: 2px solid var(--color-blue-bright);
+  outline-offset: 2px;
+}
+
+/* --- Accessibility: Form Error Styles --- */
+.form-group input[aria-invalid="true"],
+.form-group select[aria-invalid="true"],
+.form-group textarea[aria-invalid="true"] {
+  border-color: var(--color-red);
+}
+
+.form-group .field-error {
+  color: var(--color-red);
+  font-size: 0.85rem;
+  margin-top: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.form-error-summary {
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  padding: var(--space-md) var(--space-lg);
+  margin-bottom: var(--space-lg);
+  color: var(--color-red);
+  font-size: 0.9rem;
+}
+
+/* --- Accessibility: Reduced Motion --- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-in {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .btn:hover,
+  .service-card:hover,
+  .gallery-item:hover img {
+    transform: none !important;
+  }
 }
 
 /* --- Print Styles --- */
