@@ -155,13 +155,11 @@ document.addEventListener('DOMContentLoaded', function () {
         successMsg.focus();
       }
 
-      // Log for now - replace with actual form submission
       var formData = new FormData(form);
       var data = {};
       formData.forEach(function (value, key) {
         data[key] = value;
       });
-      console.log('Form submitted:', data);
     });
   });
 
